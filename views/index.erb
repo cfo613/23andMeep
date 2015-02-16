@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>23andMeep</title>
+</head>
+<body>
+  <h1>23 and Meep!</h1>
+
+  <% if session["access_token"] %>
+    Welcome <%= @person.first %> <%= @person.last %>!
+    <br><br>
+    <% if @gender == "female"%>
+      <% pronoun = "lady" %>
+    <% else %>
+      <%pronoun = "dude" %>
+    <% end %>
+    You're an awesome <%= pronoun %>!
+    <br><br>
+    <ul>
+      <% @traits.each do |trait| %>
+        <li><%= trait["description"]%> : <%= trait["trait"]%></li>
+      <% end %>
+    </ul>
+    <br><br>
+    <a href = '/logout'>logout</a>
+    <% else %>
+    <a href = "<%= @url %>">Log in to 23andMe</a>
+  <% end %>
+</body>
+</html>
