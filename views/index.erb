@@ -1,29 +1,14 @@
 <html>
 <head>
-  <title>23andMeep</title>
+  <title>23andMeep Homepage</title>
 </head>
 <body>
-  <h1>23 and Meep!</h1>
+  <h1>Welcome to 23 and Meep!</h1>
 
-  <% if session["access_token"] %>
-    Welcome <%= @person.first %> <%= @person.last %>!
-    <br><br>
-    <% if @gender == "female"%>
-      <% pronoun = "lady" %>
-    <% else %>
-      <%pronoun = "dude" %>
-    <% end %>
-    You're an awesome <%= pronoun %>!
-    <br><br>
-    <ul>
-      <% @traits.each do |trait| %>
-        <li><%= trait["description"]%> : <%= trait["trait"]%></li>
-      <% end %>
-    </ul>
-    <br><br>
-    <a href = '/logout'>logout</a>
-    <% else %>
-    <a href = "<%= @url %>">Log in to 23andMe</a>
-  <% end %>
+  <h4>At 23andMeep we use genetic profile information from your 23andme account, combined with
+    your answers to carefully curated profile questions, to generate your super hero persona!</h4>
+  <form action = "/login" method = "GET">
+    <button class = "nav" id = "start">Click here to get started!</button>
+  </form>
 </body>
 </html>

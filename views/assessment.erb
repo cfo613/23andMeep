@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>23andMeep Assessment</title>
+</head>
+<body>
+  <h1>Welcome, <%= user.first_name %> <%= user.last_name %>!</h1>
+
+  <h4>In addition to your genetic make-up, we need to assess specific personality traits in order
+     to determine your perfect super persona! Please answer the questions below.</h4>
+
+   <ol>
+     <% questions.each do |question| %>
+      <li><%= question.question %></li>
+     <% end %>
+   </ol>
+</body>
+</html>
