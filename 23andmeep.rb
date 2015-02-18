@@ -21,9 +21,7 @@ end
 
 
 get '/login' do
-
-  render :erb, :login
-
+  erb :login
 end
 
 get '/login/TTAM' do
@@ -46,7 +44,25 @@ get '/login/TTAM' do
 
 end
 
+get '/login/guest' do
+  erb :guest
+end
+
+post '/guest' do
+  user_hash = {
+    first_name: params["first"].capitalize,
+    last_name: params["last"].capitalize,
+    gender: params["gender"]
+  }
+
+  user = User.create(user_hash);
+  session["user_id"] = user[:id];
+
+  redirect('/assessment')
+end
+
 get '/assessment' do
+  #if using 23andme account
   if session["access_token"]
     #token and headers for HTTP requests
     token = session["access_token"]
@@ -66,25 +82,54 @@ get '/assessment' do
     }
     user = User.create(user_hash);
 
-    #create Person
-    class Person
-      attr_accessor :id, :first, :last
-    end
-    @person = Person.new
-    @person.first = profile["first_name"]
-    @person.last = profile["last_name"]
-    @person.id =
+  end
 
-    #get trait information
-    traits = HTTParty.get('https://api.23andme.com/1/traits/' + profile_id, headers: headers)
-    @traits = traits["traits"]
-
-
-    @gender = phenotypes["value"]
-
+  #if guest user
+  if session["user_id"]
+    user = User.find_by(id: session["user_id"])
   end
 
   erb :assessment, locals: {user: user, questions: Question.all(), options: Option.all()}
+
+end
+
+post '/results' do
+  #create response
+  response_hash = {
+    answer1: params["q1"],
+    answer2: params["q2"],
+    answer3: params["q3"],
+    answer4: params["q4"],
+    user_id: params["user"]
+  }
+  response = Response.create(response_hash);
+  #find user
+  user = User.find_by(id: params["user"]);
+  if session["access_token"]
+  #get traits / weakenesses
+    #token and headers for HTTP requests
+    token = session["access_token"]
+    headers = {"Authorization" => "Bearer #{token}"}
+    #get profile information
+    profile = HTTParty.get('https://api.23andme.com/1/names/', headers: headers)
+    profile_id = profile["profiles"][0]["id"]
+    #get trait information
+    traits = HTTParty.get('https://api.23andme.com/1/traits/' + profile_id, headers: headers)
+    weaknesses = traits["traits"]
+  else
+  #get demo traits / weaknesses
+    #token and headers for HTTP requests
+    token = "fdab6a6892b198e40c2484bf2121f761"
+    headers = {"Authorization" => "Bearer #{token}"}
+    #get profile information
+    profile = HTTParty.get('https://api.23andme.com/1/demo/names/', headers: headers)
+    profile_id = profile["profiles"][0]["id"]
+    #get trait information
+    traits = HTTParty.get('https://api.23andme.com/1/demo/traits/' + profile_id, headers: headers)
+    weaknesses = traits["traits"]
+  end
+
+  erb :results, locals: {response: response, options: Option.all(), heroes: Hero.all(), user: user, weaknesses: weaknesses}
 
 end
 

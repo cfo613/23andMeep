@@ -1,0 +1,22 @@
+h1 {
+  font-family: lucida;
+  text-align: center;
+}
+
+h4 {
+  font-family: lucida;
+  text-align: center;
+}
+
+.q1_img {
+  width: 350px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.q3_img {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  border-radius: 10px;
+}

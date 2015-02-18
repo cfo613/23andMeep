@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/style.css">
   <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-  <title>23andMeep Homepage</title>
+  <title>23andMeep Create User Account</title>
 </head>
 <body>
-  <h1>Welcome to 23 and Meep!</h1>
-
-  <h4>At 23andMeep we use genetic profile information from your 23andme account, combined with
-    your answers to carefully curated personality questions, to generate your super hero persona!</h4>
-  <form action = "/login" method = "GET">
-    <button class = "nav" id = "start">Click here to get started!</button>
+  <form action = '/guest' method = "POST">
+    <input type = "text" label = "first name" name = "first" placeholder = "enter first name">
+    <input type = "text" label = "last name" name = "last" placeholder = "enter last name">
+    <select label = "gender" name = "gender">
+      <option>female</option>
+      <option>male</option>
+    </select>
+    <button>submit</button>
   </form>
-</body>
+<body>
 </html>
