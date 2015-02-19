@@ -104,7 +104,7 @@ Hero.create({
   name: "Pioneer Paladin",
   gender: "female",
   description: "With her sense of direction, you may think she's half human / half homing pigeon. Not only that, but she has the super secret power of flight! With that power, you wouldn't think she knows the subway system like the back of her hand...but she does! Always a good pal to have around when you find yourself downtown, off the grid, without the slightest clue where you are...and your cellphone just died. Plus, she'll never charge you surge pricing - suck on that Uber.",
-  costume: "She may wear tights under her clothes...although is not yet comfortable wearing them in public",
+  costume: "She may wear tights under her clothes...although is not yet comfortable wearing them in public.",
   energy_source: "Like any good pigeon...really enjoys some nice wholesome grains. Maybe some berries to mix it up once in awhile."
 });
 
@@ -112,6 +112,6 @@ Hero.create({
   name: "Pioneer Paladin",
   gender: "male",
   description: "With his sense of direction, you may think he's half human / half homing pigeon. Not only that, but he has the super secret power of flight! With that power, you wouldn't think he knows the subway system like the back of his hand...but he does! Always a good pal to have around when you find yourself downtown, off the grid, without the slightest clue where you are...and your cellphone just died. Plus, he'll never charge you surge pricing - suck on that Uber.",
-  costume: "He may wear tights under his clothes...although is not yet comfortable wearing them in public",
+  costume: "He may wear tights under his clothes...although is not yet comfortable wearing them in public.",
   energy_source: "Like any good pigeon...really enjoys some nice wholesome grains. Maybe some berries to mix it up once in awhile."
 });

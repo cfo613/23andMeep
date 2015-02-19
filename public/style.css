@@ -1,3 +1,17 @@
+.headline {
+  margin-top: 50px;
+}
+
+.intro {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.nav {
+  text-align: center;
+  margin: 0 auto;
+}
+
 h1 {
   font-family: lucida;
   text-align: center;
@@ -8,15 +22,270 @@ h4 {
   text-align: center;
 }
 
+/*--------------------
+INDEX STYLING
+--------------------*/
+
+#homepage {
+  background-image: url("http://kidspartyhubph.com/wp-content/uploads/2012/11/Untitled-21.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#welcome {
+  border: 5px solid black;
+  border-radius: 100px;
+  text-align: center;
+  padding-bottom: 50px;
+  background-color: white;
+  max-width: 600px;
+  margin-top: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------
+LOGIN STYLING
+--------------------*/
+
+#login {
+  background-image: url("http://helloiamphat.files.wordpress.com/2014/02/wham-bam-pow.jpg?w=696");
+  /*background-size: 100% 100%;
+  background-repeat: no-repeat;*/
+}
+
+#TTAMSignIn, #guestSignIn {
+  border: 5px solid black;
+  text-align: center;
+  padding-bottom: 50px;
+  background-color: white;
+  margin-top: 50px;
+  height: 450px;
+  border-radius: 25px;
+}
+
+#TTAMUser {
+  border-top: 1px solid #0b6b06;
+   background: #2a8a0a;
+   background: -webkit-gradient(linear, left top, left bottom, from(#0eb53b), to(#2a8a0a));
+   background: -webkit-linear-gradient(top, #0eb53b, #2a8a0a);
+   background: -moz-linear-gradient(top, #0eb53b, #2a8a0a);
+   background: -ms-linear-gradient(top, #0eb53b, #2a8a0a);
+   background: -o-linear-gradient(top, #0eb53b, #2a8a0a);
+   padding: 9px 18px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 18px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+
+#TTAMUser:hover {
+  border-top-color: #e61260;
+  background: #e61260;
+  color: #ccc;
+}
+
+#TTAMUser:active {
+  border-top-color: #104a04;
+  background: #104a04;
+}
+
+.guestImage {
+  width: 150px;
+}
+
+#femaleGuest {
+  margin-left: 3px;
+  /*margin-right: 5px;*/
+  margin-top: 23px;
+}
+
+#maleGuest {
+  /*margin-left: 7px;*/
+  margin-top: 23px;
+}
+
+/*--------------------
+GUEST STYLING
+--------------------*/
+#guestLogin {
+  background-image: url("https://littledeanbean.files.wordpress.com/2014/03/noahsuperhero4bdayinvitefinal2-11.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.guest {
+  border: 5px solid black;
+  background-color: white;
+  width: 400px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+.nameInput {
+  width: 150px;
+  font-family: lucida;
+  height: 30px;
+  padding: 5px;
+  margin: 0;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+}
+
+#genderList {
+  width: 150px;
+  font-family: lucida;
+  height: 30px;
+  padding: 5px;
+  margin: 0;
+  -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+  -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+  box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+}
+
+#guestUser, #guestSubmit {
+  border-top: 1px solid #2805f2;
+  background: #1679e3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2a11ed), to(#1679e3));
+  background: -webkit-linear-gradient(top, #2a11ed, #1679e3);
+  background: -moz-linear-gradient(top, #2a11ed, #1679e3);
+  background: -ms-linear-gradient(top, #2a11ed, #1679e3);
+  background: -o-linear-gradient(top, #2a11ed, #1679e3);
+  padding: 9px 18px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 18px;
+  font-family: 'Lucida Grande';
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+#guestUser:hover, #guestSubmit:hover {
+  border-top-color: #f20909;
+  background: #f20909;
+  color: #ccc;
+}
+
+#guestUser:active, #guestSubmit:active {
+  border-top-color: #1f1b5c;
+  background: #1f1b5c;
+}
+
+/*--------------------
+ASSESSMENT STYLING
+--------------------*/
+#assessment {
+  background-color: rgba(126, 127, 137, 0.46);
+  /*background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQLDQI2JtCKMe4_lkrU-MStTMecT4K5s-brIAxrvN7exTwSiubW");*/
+  /*background-size: 100% 100%;
+  background-repeat: no-repeat;*/
+  font-weight: bold;
+}
+
+#leftBanner {
+  background-image: url("/images/bam.png");
+  height: 150px;
+  background-size: 100% 100%;
+}
+
+#middleBanner {
+  background-color: blue;
+  color: white;
+  height: 150px;
+  border-radius: 5px;
+}
+
+#rightBanner {
+  background-image: url("/images/pop.png");
+  background-size: 100% 100%;
+  height: 150px;
+}
+
+.questions {
+  font-weight: bold;
+  color: black;
+}
+
 .q1_img {
   width: 350px;
+  height: 250px;
   margin-top: 10px;
   border-radius: 10px;
 }
 
 .q3_img {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   margin-top: 10px;
   border-radius: 10px;
+}
+
+#start, #assessSubmit {
+  border-top: 1px solid #960b0b;
+  background: #b30d0d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d60d0d), to(#b30d0d));
+  background: -webkit-linear-gradient(top, #d60d0d, #b30d0d);
+  background: -moz-linear-gradient(top, #d60d0d, #b30d0d);
+  background: -ms-linear-gradient(top, #d60d0d, #b30d0d);
+  background: -o-linear-gradient(top, #d60d0d, #b30d0d);
+  padding: 5px 18px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 18px;
+  font-family: 'Lucida Grande';
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+#start:hover, #assessSubmit:hover {
+  border-top-color: #2409f0;
+  background: #2409f0;
+  color: #ccc;
+}
+
+#start:active, #assessSubmit:active {
+  border-top-color: #1f1b5c;
+  background: #1f1b5c;
+}
+
+#hide {
+  display: none;
+}
+
+#show {
+  display: block;
+}
+
+#superHeroGen {
+  width: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }

@@ -7,13 +7,19 @@
   <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
   <title>23andMeep Homepage</title>
 </head>
-<body>
-  <h1>Welcome to 23 and Meep!</h1>
+<body id = "homepage">
 
-  <h4>At 23andMeep we use genetic profile information from your 23andme account, combined with
-    your answers to carefully curated personality questions, to generate your super hero persona!</h4>
-  <form action = "/login" method = "GET">
-    <button class = "nav" id = "start">Click here to get started!</button>
-  </form>
+  <div id = "welcome">
+    <h1 class = "headline">Welcome to 23 and Meep!</h1>
+    <br>
+    <h4 class = "intro">At 23andMeep we use genetic profile information from your 23andMe account, combined with
+      your answers to carefully curated personality questions, to generate your super hero persona!</h4>
+    <br><br>
+    <div class = "nav">
+      <form action = "/login" method = "GET">
+        <button id = "start">Click here to get started!</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

@@ -7,13 +7,33 @@
   <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
   <title>23andMeep Sign-In</title>
 </head>
-<body>
-  <form action = '/login/TTAM' method = "GET">
-    <button>Sign In using 23andMe</button>
-  </form>
+<body id = "login">
+  <br><br>
+  <div class = "row">
+    <div class = "col-md-3 col-md-offset-2" id = "TTAMSignIn">
+      <h1 class = "headline">Genetic Specimen</h1>
+      <img src = "images/23andme_logo.jpg" id = "TTAMlogo">
+      <br>
+      <h4 class = "description">If you have a 23andMe account, you can sign in using your 23andMe username and password. This will allow us to import traits from your genetic profile.</h4>
+      <br>
+      <form action = '/login/TTAM' method = "GET">
+        <button id = "TTAMUser">Sign In using 23andMe</button>
+      </form>
+    </div>
 
-  <form action = '/login/guest' method = "GET">
-    <button>Sign In as New User</button>
-  </form>
+    <div class="col-md-3 col-md-offset-2" id = "guestSignIn">
+      <h1 class = "headline">Mystery Guest</h1>
+      <span>
+      <img src = '/images/mystery-woman.png' class = "guestImage" id = "femaleGuest">
+      <img src = '/images/mystery-man.png' class = "guestImage" id = "maleGuest">
+      </span>
+      <br><br>
+      <h4 class = "description">If you do not have a 23andMe account - fear not! You can create a new user account, and we will use a demo genetic profile.</h4>
+      <br>
+      <form action = '/login/guest' method = "GET">
+        <button id = "guestUser">Sign In as a Guest</button>
+      </form>
+    </div>
+  </div>
 <body>
 </html>

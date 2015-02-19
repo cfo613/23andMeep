@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="/style.css">
   <title>23andMeep Results</title>
   <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <script src = "results.js"></script>
 </head>
 <body>
   <form action = '/logout' method = "GET">
@@ -28,10 +29,6 @@
   <% if weaknesses[8]["trait"] == "Increased Odds" || weaknesses[8]["trait"] == "Typical Odds" %>
     <% weakness_arr.push(weaknesses[8]["description"]) %>
   <% end %>
-  <!-- muscle performance -->
-  <% if weaknesses[9]["trait"] == "Unlikely Sprinter" %>
-    <% weakness_arr.push(weaknesses[9]["trait"]) %>
-  <% end %>
   <!-- red hair -->
   <% if weaknesses[11]["trait"] == "High Chance" || weaknesses[11]["trait"] == ">70% Chance" %>
     <% weakness_arr.push("A Ginger") %>
@@ -41,7 +38,16 @@
     <% weakness_arr.push(weaknesses[13]["trait"]) %>
   <% end %>
 
+  <div id = "show">
+    <h1>Super Hero Generation in progress</h1>
+    <br><br>
+    <h4>Please hold while we complete extremely complex calculations to determine your super hero persona...</h4>
+    </br><br>
+    <img id = "superHeroGen" src = "http://38.media.tumblr.com/tumblr_lfp6afqzwC1qfcbfro1_500.gif" align = "middle">
+  </div>
 
+
+  <div id = "hide">
   <!-- super hero profile -->
   <% if response["answer1"] == options[0]["optiona"] || response["answer1"] == options[0]["optionc"] %>
     <% if response["answer2"] == options[1]["optiona"] || response["answer2"] == options[1]["optionb"] %>
@@ -107,5 +113,7 @@
     <% end %>
   <% end %>
   </ul>
+  </div>
 
 </body>
+</html>
