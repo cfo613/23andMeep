@@ -1,10 +1,14 @@
+/*--------------------
+GLOBAL STYLING
+--------------------*/
+
 .headline {
   margin-top: 50px;
 }
 
 .intro {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 900px;
 }
 
 .nav {
@@ -12,14 +16,12 @@
   margin: 0 auto;
 }
 
-h1 {
-  font-family: lucida;
+h1, h4 {
   text-align: center;
 }
 
-h4 {
-  font-family: lucida;
-  text-align: center;
+p {
+  font-size: 16px;
 }
 
 /*--------------------
@@ -157,7 +159,7 @@ GUEST STYLING
   box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
 }
 
-#guestUser, #guestSubmit {
+#guestUser, #guestSubmit, #logout {
   border-top: 1px solid #2805f2;
   background: #1679e3;
   background: -webkit-gradient(linear, left top, left bottom, from(#2a11ed), to(#1679e3));
@@ -180,13 +182,13 @@ GUEST STYLING
   vertical-align: middle;
 }
 
-#guestUser:hover, #guestSubmit:hover {
+#guestUser:hover, #guestSubmit:hover, #logout:hover {
   border-top-color: #f20909;
   background: #f20909;
   color: #ccc;
 }
 
-#guestUser:active, #guestSubmit:active {
+#guestUser:active, #guestSubmit:active, #logout:active {
   border-top-color: #1f1b5c;
   background: #1f1b5c;
 }
@@ -291,6 +293,11 @@ RESULTS STYLING
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
+}
+
+#bottom {
+  margin-bottom: 50px;
 }
 
 #calc {
@@ -300,19 +307,63 @@ RESULTS STYLING
 }
 
 #calcBanner {
-  background-color: darkgray;
+  background-color: rgba(191, 63, 127, 0.82);
   color: white;
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
+#logout {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 #results {
-  /*background-image: url("");*/
+  background-image: url("/images/results_background.png");
+  background-size: 100% 100%;
   background-color: white;
 }
 
 #resultsBanner {
   margin: 0 auto;
   text-align: center;
-  max-width: 700px;
+  background-color: rgba(255,255,255,.8);
+  padding-bottom: 10px;
+}
+
+#heroName, #sidekickName {
+  color: black;
+}
+
+.heroHeaders {
+  text-align: left;
+  color: black;
+}
+
+#heroImg {
+  width: 250px;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+#sidekickImg {
+  width: 150px;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+#bio {
+  padding-top: 20px;
+}
+
+#selection {
+  font-style: italic;
+}
+
+#heroDetails {
+  padding-top: 10px;
+  background-color: rgba(255,255,255,.5);
+  border: 5px solid black;
+  border-radius: 5px;
 }

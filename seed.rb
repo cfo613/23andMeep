@@ -43,7 +43,7 @@ Option.create({
   question_id: 3
 });
 Option.create({
-  optiona: "loyalty",
+  optiona: "grit",
   optionb: "quirkiness",
   optionc: "strength",
   optiond: "looks",

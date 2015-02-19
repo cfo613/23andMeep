@@ -9,41 +9,57 @@
   <script src = "results.js"></script>
 </head>
 <body>
-  <% weakness_arr = [] %>
-  <!-- alcohol flush -->
-  <% if weaknesses[0]["trait"] == "Flushes" %>
+  <!-- weakness logic -->
+    <% weakness_arr = [] %>
+    <!-- alcohol flush -->
+    <% if weaknesses[0]["trait"] == "Flushes" %>
     <% weakness_arr.push(weaknesses[0]["description"]) %>
-  <% end %>
-  <!-- bitter taste perception -->
-  <% if weaknesses[1]["trait"] == "Can Taste" %>
+    <% end %>
+    <!-- bitter taste perception -->
+    <% if weaknesses[1]["trait"] == "Can Taste" %>
     <% weakness_arr.push(weaknesses[1]["description"]) %>
-  <% end %>
-  <!-- lactose intolerance -->
-  <% if weaknesses[6]["trait"] == "Likely Intolerant" %>
+    <% end %>
+    <!-- lactose intolerance -->
+    <% if weaknesses[6]["trait"] == "Likely Intolerant" %>
     <% weakness_arr.push(weaknesses[6]["description"]) %>
-  <% end %>
-  <!-- male pattern baldness -->
-  <% if weaknesses[8]["trait"] == "Increased Odds" || weaknesses[8]["trait"] == "Typical Odds" %>
+    <% end %>
+    <!-- male pattern baldness -->
+    <% if weaknesses[8]["trait"] == "Increased Odds" || weaknesses[8]["trait"] == "Typical Odds" %>
     <% weakness_arr.push(weaknesses[8]["description"]) %>
-  <% end %>
-  <!-- red hair -->
-  <% if weaknesses[11]["trait"] == "High Chance" || weaknesses[11]["trait"] == ">70% Chance" %>
+    <% end %>
+    <!-- red hair -->
+    <% if weaknesses[11]["trait"] == "High Chance" || weaknesses[11]["trait"] == ">70% Chance" %>
     <% weakness_arr.push("A Ginger") %>
-  <% end %>
-  <!-- smoking behavior -->
-  <% if weaknesses[13]["trait"] == "If a Smoker, Likely to Smoke More" %>
+    <% end %>
+    <!-- smoking behavior -->
+    <% if weaknesses[13]["trait"] == "If a Smoker, Likely to Smoke More" %>
     <% weakness_arr.push(weaknesses[13]["trait"]) %>
+    <% end %>
+
+  <!-- sidekick logic -->
+  <% if response["answer4"] == options[3]["optiona"] %>
+    <% img = "/images/grit.png" %>
+  <% end %>
+  <% if response["answer4"] == options[3]["optionb"] %>
+    <% img = "/images/quirkiness.png" %>
+  <% end %>
+  <% if response["answer4"] == options[3]["optionc"] %>
+    <% img = "/images/strength.png" %>
+  <% end %>
+  <% if response["answer4"] == options[3]["optiond"] %>
+    <% img = "/images/looks.png" %>
   <% end %>
 
 <div id = "calc">
   <div id = "show">
-    <div id = "calcBanner">
-    <h1>Super Hero Generation in progress</h1>
-    <br>
-    <h4 class = "intro">Please hold while we complete extremely complex calculations to determine your super hero persona...</h4>
-  </div>
+      <div id = "calcBanner">
+        <h1>Super Hero Generation in progress</h1>
+        <br>
+        <h4 class = "intro">Please hold while we complete extremely complex calculations to determine your super hero persona...</h4>
+      </div>
     </br><br>
     <img id = "superHeroGen" src = "http://38.media.tumblr.com/tumblr_lfp6afqzwC1qfcbfro1_500.gif" align = "middle">
+    <br id = "bottom">
   </div>
 </div>
 
@@ -51,9 +67,10 @@
 <div id = "results">
   <div id = "hide">
     <!-- header -->
-    </div class = "row">
+  <div id = "resultsBanner">
+    <div class = "row">
       <div class = "col-md-6 col-md-offset-3">
-        <h1>Oh hey, Super version of <%= user["first_name"] %>!</h1>
+        <h1>Oh hey, super version of <%= user["first_name"] %>!</h1>
       </div>
       <div class = "col-md-1 col-md-offset-1">
         <form action = '/logout' method = "GET">
@@ -63,80 +80,112 @@
     </div>
     <br>
     <div class = "row">
-      <h4 class = "intro">Disclaimer: we ask that you kindly use your powers for good, not evil. We are also not liable if you suddently believe you actually have these super powers, and seriously injure yourself. Although we do believe in natural selection.</h4>
-    </div>
-    <br>
-    <!-- super hero profile -->
-  <% if response["answer1"] == options[0]["optiona"] || response["answer1"] == options[0]["optionc"] %>
-    <% if response["answer2"] == options[1]["optiona"] || response["answer2"] == options[1]["optionb"] %>
-      <% if user["gender"] == "female" %>
-        <h4 class = "heroName"><%= heroes[0]["name"] %></h4>
-        <p class = "heroDescription"><%= heroes[0]["description"] %></p>
-        <p class = "heroCostume"><%= heroes[0]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
-        <p class = "heroEnergy"><%= heroes[0]["energy_source"]%></p>
-      <% else %>
-        <h4 class = "heroName"><%= heroes[1]["name"] %></h4>
-        <p class = "heroDescription"><%= heroes[1]["description"] %></p>
-        <p class = "heroCostume"><%= heroes[1]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
-        <p class = "heroEnergy"><%= heroes[1]["energy_source"]%></p>
-      <% end %>
-    <% else %>
-      <% if user["gender"] == "female" %>
-        <% hero_name = heroes[2]["name"] %>
-        <p class = "heroDescription"><%= heroes[2]["description"] %></p>
-        <p class = "heroCostume"><%= heroes[2]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
-        <p class = "heroEnergy"><%= heroes[2]["energy_source"]%></p>
-      <% else %>
-        <h4 class = "heroName"><%= heroes[3]["name"] %></h4>
-        <p class = "heroDescription"><%= heroes[3]["description"] %></p>
-        <p class = "heroCostume"><%= heroes[3]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
-        <p class = "heroEnergy"><%= heroes[3]["energy_source"]%></p>
-      <% end %>
-    <% end %>
-  <% end %>
-
-  <% if response["answer1"] == options[0]["optionb"] || response["answer1"] == options[0]["optiond"] %>
-    <% if response["answer2"] == options[1]["optiona"] || response["answer2"] == options[1]["optionb"] %>
-      <% if user["gender"] == "female" %>
-        <h4 class = "heroName"><%= heroes[4]["name"] %></h4>
-        <p class = "heroDescription"><%= heroes[4]["description"] %></p>
-        <p class = "heroCostume"><%= heroes[4]["costume"]%>.</p>
-        <p class = "heroEnergy"><%= heroes[4]["energy_source"]%></p>
-      <% else %>
-        <h4 class = "heroName"><%= heroes[5]["name"] %></h4>
-        <p class = "heroDescription"><%= heroes[5]["description"] %></p>
-        <p class = "heroCostume"><%= heroes[5]["costume"]%>.</p>
-        <p class = "heroEnergy"><%= heroes[5]["energy_source"]%></p>
-      <% end %>
-    <% else %>
-      <% if user["gender"] == "female" %>
-        <h4 class = "heroName"><%= heroes[6]["name"] %></h4>
-        <p class = "heroDescription"><%= heroes[6]["description"] %></p>
-        <p class = "heroCostume"><%= heroes[6]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
-        <p class = "heroEnergy"><%= heroes[6]["energy_source"]%></p>
-      <% else %>
-        <h4 class = "heroName"><%= heroes[7]["name"] %></h4>
-        <p class = "heroDescription"><%= heroes[7]["description"] %></p>
-        <p class = "heroCostume"><%= heroes[7]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
-        <p class = "heroEnergy"><%= heroes[7]["energy_source"]%></p>
-        <p class = "heroWeakness"></p>
-      <% end %>
-    <% end %>
-  <% end %>
-
-  <div class = "row">
-    <div class = "col-md-3 col-md-offset-1">
-      <h4><%=hero_name%></h4>
+      <h4 class = "intro">*Disclaimer: we ask that you kindly use your powers for good, not evil. We are also not liable if you suddenly believe you actually have these super powers, and seriously injure yourself.</h4>
+      <h4 class = "intro" id = "selection">...although we do believe in natural selection.</h4>
     </div>
   </div>
-
-  <ul>
-  <% if weakness_arr.length > 0 %>
-    <% weakness_arr.each do |weakness| %>
-      <li><%= weakness %></li>
+    <br>
+    <!-- super hero profile -->
+    <% if response["answer1"] == options[0]["optiona"] || response["answer1"] == options[0]["optionc"] %>
+    <% if response["answer2"] == options[1]["optiona"] || response["answer2"] == options[1]["optionb"] %>
+    <% if user["gender"] == "female" %>
+    <% hero_name = heroes[0]["name"] %>
+    <p class = "heroDescription"><%= heroes[0]["description"] %></p>
+    <p class = "heroCostume"><%= heroes[0]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
+    <p class = "heroEnergy"><%= heroes[0]["energy_source"]%></p>
+    <% else %>
+    <h4 class = "heroName"><%= heroes[1]["name"] %></h4>
+    <p class = "heroDescription"><%= heroes[1]["description"] %></p>
+    <p class = "heroCostume"><%= heroes[1]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
+    <p class = "heroEnergy"><%= heroes[1]["energy_source"]%></p>
     <% end %>
-  <% end %>
-  </ul>
+    <% else %>
+    <% if user["gender"] == "female" %>
+    <% hero_name = heroes[2]["name"] %>
+    <% hero_desc = heroes[2]["description"] %>
+    <% hero_costume = heroes[2]["costume"] %>
+    <% hero_energy = heroes[2]["energy_source"]%>
+    <% else %>
+    <h4 class = "heroName"><%= heroes[3]["name"] %></h4>
+    <p class = "heroDescription"><%= heroes[3]["description"] %></p>
+    <p class = "heroCostume"><%= heroes[3]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
+    <p class = "heroEnergy"><%= heroes[3]["energy_source"]%></p>
+    <% end %>
+    <% end %>
+    <% end %>
+
+    <% if response["answer1"] == options[0]["optionb"] || response["answer1"] == options[0]["optiond"] %>
+    <% if response["answer2"] == options[1]["optiona"] || response["answer2"] == options[1]["optionb"] %>
+    <% if user["gender"] == "female" %>
+    <h4 class = "heroName"><%= heroes[4]["name"] %></h4>
+    <p class = "heroDescription"><%= heroes[4]["description"] %></p>
+    <p class = "heroCostume"><%= heroes[4]["costume"]%>.</p>
+    <p class = "heroEnergy"><%= heroes[4]["energy_source"]%></p>
+    <% else %>
+    <h4 class = "heroName"><%= heroes[5]["name"] %></h4>
+    <p class = "heroDescription"><%= heroes[5]["description"] %></p>
+    <p class = "heroCostume"><%= heroes[5]["costume"]%>.</p>
+    <p class = "heroEnergy"><%= heroes[5]["energy_source"]%></p>
+    <% end %>
+    <% else %>
+    <% if user["gender"] == "female" %>
+    <h4 class = "heroName"><%= heroes[6]["name"] %></h4>
+    <p class = "heroDescription"><%= heroes[6]["description"] %></p>
+    <p class = "heroCostume"><%= heroes[6]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
+    <p class = "heroEnergy"><%= heroes[6]["energy_source"]%></p>
+    <% else %>
+    <h4 class = "heroName"><%= heroes[7]["name"] %></h4>
+    <p class = "heroDescription"><%= heroes[7]["description"] %></p>
+    <p class = "heroCostume"><%= heroes[7]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
+    <p class = "heroEnergy"><%= heroes[7]["energy_source"]%></p>
+    <p class = "heroWeakness"></p>
+    <% end %>
+    <% end %>
+    <% end %>
+
+    <div class = "row">
+      <div class = "col-md-3 col-md-offset-2 text-center">
+        <h2 id = "heroName"><%=hero_name%></h2>
+      </div>
+      <div class = "col-md-5 text-left">
+        <h4 class = "heroHeaders" id = "bio">BIO</h4>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-md-3 col-md-offset-2 text-center">
+        <img src = "/images/hipster.png" id = "heroImg">
+      </div>
+      <div class = "col-md-5 text-left" id = "heroDetails">
+        <p id = "heroDesc"><%=hero_desc%></p>
+      </div>
+      <div class = "col-md-5 text-left">
+        <h4 class = "heroHeaders">WEAKNESSES</h4>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col-md-3 col-md-offset-2 text-center">
+        <h4 id = "sidekickName">Trusty Sidekick</h3>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-md-3 col-md-offset-2 text-center">
+        <img src = <%=img%> id = "sidekickImg"/>
+      </div>
+      <div class = "col-md-5 text-left">
+        <h4 class = "heroHeaders">COSTUME</h4>
+      </div>
+      <div class = "col-md-5" id = "heroDetails">
+        <p id = "heroCostume"><%=hero_costume%></p>
+      </div>
+      <div class = "col-md-5 text-left">
+        <h4 class = "heroHeaders">ENERGY SOURCE</h4>
+      </div>
+      <div class = "col-md-5" id = "heroDetails">
+        <p id = "heroEnergy"><%=hero_energy%></p>
+      </div>
+    </div>
+
   </div>
 </div>
 </body>
