@@ -25,7 +25,6 @@ json_hash = JSON.parse(json)
 client_id = json_hash['id']
 client_secret = json_hash['secret']
 redirect_uri = 'http://104.236.70.15/receive_code/'
-binding.pry
 
 get '/' do
   render :erb, :index

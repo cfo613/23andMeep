@@ -12,27 +12,27 @@
     <% weakness_arr = [] %>
     <!-- alcohol flush -->
     <% if weaknesses[0]["trait"] == "Flushes" %>
-    <% weakness_arr.push(weaknesses[0]["description"]) %>
+    <% weakness_arr.push('/images/alcohol.png') %>
     <% end %>
     <!-- bitter taste perception -->
     <% if weaknesses[1]["trait"] == "Can Taste" %>
-    <% weakness_arr.push(weaknesses[1]["description"]) %>
+    <% weakness_arr.push('/images/bitter.png') %>
     <% end %>
     <!-- lactose intolerance -->
     <% if weaknesses[6]["trait"] == "Likely Intolerant" %>
-    <% weakness_arr.push(weaknesses[6]["description"]) %>
+    <% weakness_arr.push('/images/lactose.png') %>
     <% end %>
     <!-- male pattern baldness -->
     <% if weaknesses[8]["trait"] == "Increased Odds" || weaknesses[8]["trait"] == "Typical Odds" %>
-    <% weakness_arr.push(weaknesses[8]["description"]) %>
+    <% weakness_arr.push('/images/baldness.png') %>
     <% end %>
     <!-- red hair -->
     <% if weaknesses[11]["trait"] == "High Chance" || weaknesses[11]["trait"] == ">70% Chance" %>
-    <% weakness_arr.push("A Ginger") %>
+    <% weakness_arr.push('/images/ginger.png') %>
     <% end %>
     <!-- smoking behavior -->
     <% if weaknesses[13]["trait"] == "If a Smoker, Likely to Smoke More" %>
-    <% weakness_arr.push(weaknesses[13]["trait"]) %>
+    <% weakness_arr.push('/images/smoking.png') %>
     <% end %>
 
   <!-- super hero profile -->
@@ -162,6 +162,11 @@
       <div class = "col-md-5 text-left">
         <h4 class = "heroHeaders">WEAKNESSES</h4>
       </div>
+      <% weakness_arr.each do |weakness| %>
+        <div class = "col-md-2 col-md-offset-6">
+          <img class = "weakness" src = <%= weakness %> />
+        </div>
+      <% end %>
     </div>
     <div class = "row">
       <div class = "col-md-3 col-md-offset-6 col-md-offset-12 col-md-offset-2 text-center">
