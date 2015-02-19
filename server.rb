@@ -15,7 +15,7 @@ set :session_secret, 'secret_lovers'
 #23andMe api keys
 client_id = ENV['GEN_CLIENT_ID']
 client_secret = ENV['GEN_CLIENT_SECRET']
-redirect_uri = 'http://localhost:4567/receive_code/'
+redirect_uri = 'http://104.236.70.15/receive_code/'
 
 get '/' do
   render :erb, :index
