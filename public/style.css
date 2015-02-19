@@ -274,6 +274,10 @@ ASSESSMENT STYLING
   background: #1f1b5c;
 }
 
+/*--------------------
+RESULTS STYLING
+--------------------*/
+
 #hide {
   display: none;
 }
@@ -287,5 +291,28 @@ ASSESSMENT STYLING
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
 
+#calc {
+  background-image: url("http://ak8.picdn.net/shutterstock/videos/3792848/preview/stock-footage-mathematical-equations-blueprint-fly-through-background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#calcBanner {
+  background-color: darkgray;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#results {
+  /*background-image: url("");*/
+  background-color: white;
+}
+
+#resultsBanner {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 700px;
 }

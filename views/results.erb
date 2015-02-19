@@ -9,9 +9,6 @@
   <script src = "results.js"></script>
 </head>
 <body>
-  <form action = '/logout' method = "GET">
-  <button>logout</button>
-  </form>
   <% weakness_arr = [] %>
   <!-- alcohol flush -->
   <% if weaknesses[0]["trait"] == "Flushes" %>
@@ -38,17 +35,38 @@
     <% weakness_arr.push(weaknesses[13]["trait"]) %>
   <% end %>
 
+<div id = "calc">
   <div id = "show">
+    <div id = "calcBanner">
     <h1>Super Hero Generation in progress</h1>
-    <br><br>
-    <h4>Please hold while we complete extremely complex calculations to determine your super hero persona...</h4>
+    <br>
+    <h4 class = "intro">Please hold while we complete extremely complex calculations to determine your super hero persona...</h4>
+  </div>
     </br><br>
     <img id = "superHeroGen" src = "http://38.media.tumblr.com/tumblr_lfp6afqzwC1qfcbfro1_500.gif" align = "middle">
   </div>
+</div>
 
 
+<div id = "results">
   <div id = "hide">
-  <!-- super hero profile -->
+    <!-- header -->
+    </div class = "row">
+      <div class = "col-md-6 col-md-offset-3">
+        <h1>Oh hey, Super version of <%= user["first_name"] %>!</h1>
+      </div>
+      <div class = "col-md-1 col-md-offset-1">
+        <form action = '/logout' method = "GET">
+          <button id = "logout">logout</button>
+        </form>
+      </div>
+    </div>
+    <br>
+    <div class = "row">
+      <h4 class = "intro">Disclaimer: we ask that you kindly use your powers for good, not evil. We are also not liable if you suddently believe you actually have these super powers, and seriously injure yourself. Although we do believe in natural selection.</h4>
+    </div>
+    <br>
+    <!-- super hero profile -->
   <% if response["answer1"] == options[0]["optiona"] || response["answer1"] == options[0]["optionc"] %>
     <% if response["answer2"] == options[1]["optiona"] || response["answer2"] == options[1]["optionb"] %>
       <% if user["gender"] == "female" %>
@@ -64,7 +82,7 @@
       <% end %>
     <% else %>
       <% if user["gender"] == "female" %>
-        <h4 class = "heroName"><%= heroes[2]["name"] %></h4>
+        <% hero_name = heroes[2]["name"] %>
         <p class = "heroDescription"><%= heroes[2]["description"] %></p>
         <p class = "heroCostume"><%= heroes[2]["costume"]%> Oh and it's in <%=response["answer3"]%>, of course.</p>
         <p class = "heroEnergy"><%= heroes[2]["energy_source"]%></p>
@@ -106,6 +124,12 @@
     <% end %>
   <% end %>
 
+  <div class = "row">
+    <div class = "col-md-3 col-md-offset-1">
+      <h4><%=hero_name%></h4>
+    </div>
+  </div>
+
   <ul>
   <% if weakness_arr.length > 0 %>
     <% weakness_arr.each do |weakness| %>
@@ -114,6 +138,6 @@
   <% end %>
   </ul>
   </div>
-
+</div>
 </body>
 </html>

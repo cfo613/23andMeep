@@ -8,9 +8,11 @@ require_relative './lib/questions'
 require_relative './lib/responses'
 require_relative './lib/users'
 
+#enable sessions
 enable :sessions
 set :session_secret, 'secret_lovers'
 
+#23andMe api keys
 client_id = ENV['GEN_CLIENT_ID']
 client_secret = ENV['GEN_CLIENT_SECRET']
 redirect_uri = 'http://localhost:4567/receive_code/'
@@ -25,10 +27,13 @@ get '/login' do
 end
 
 get '/login/TTAM' do
+  #23andme api base url
   base_url = "https://api.23andme.com/authorize/"
+  #create state variable
   state = SecureRandom.urlsafe_base64
   session["state"] = state
 
+  #create query hash
   query = {
     redirect_uri: redirect_uri,
     response_type: "code",
@@ -37,25 +42,45 @@ get '/login/TTAM' do
     state: state
   }
 
+  #encode query and append to base url
   encoded_query = URI.encode_www_form(query)
   @url = base_url + "?" + encoded_query
 
   redirect(@url)
+end
 
+get '/receive_code/' do
+  #verify that session["state"] and state sent back by 23andMe are the same
+  if session["state"] = params[:state]
+    #send HTTP request for access to API data (scope defined in hash)
+    response = HTTParty.post('https://api.23andme.com/token/', body: {
+      client_id: client_id,
+      client_secret: client_secret,
+      grant_type: "authorization_code",
+      code: params[:code],
+      redirect_uri: redirect_uri,
+      scope: "basic names analyses phenotypes:read:sex"
+    })
+    session["access_token"] = response["access_token"]
+  end
+  redirect ('/assessment')
 end
 
 get '/login/guest' do
+  #just render guest page
   erb :guest
 end
 
 post '/guest' do
+  #create user
   user_hash = {
     first_name: params["first"].capitalize,
     last_name: params["last"].capitalize,
     gender: params["gender"]
   }
-
   user = User.create(user_hash);
+
+  #set session user id
   session["user_id"] = user[:id];
 
   redirect('/assessment')
@@ -74,7 +99,7 @@ get '/assessment' do
     #get gender
     phenotypes = HTTParty.get('https://api.23andme.com/1/phenotypes/' + profile_id + '/sex', headers:headers)
 
-    #create user
+    #create user based on 23andMe profile information
     user_hash = {
       first_name: profile["first_name"],
       last_name: profile["last_name"],
@@ -86,6 +111,7 @@ get '/assessment' do
 
   #if guest user
   if session["user_id"]
+    #find previously created user by session["user_id"]
     user = User.find_by(id: session["user_id"])
   end
 
@@ -103,10 +129,12 @@ post '/results' do
     user_id: params["user"]
   }
   response = Response.create(response_hash);
+
   #find user
   user = User.find_by(id: params["user"]);
+
+  #get traits / weakenesses (if 23andMe user)
   if session["access_token"]
-  #get traits / weakenesses
     #token and headers for HTTP requests
     token = session["access_token"]
     headers = {"Authorization" => "Bearer #{token}"}
@@ -116,8 +144,8 @@ post '/results' do
     #get trait information
     traits = HTTParty.get('https://api.23andme.com/1/traits/' + profile_id, headers: headers)
     weaknesses = traits["traits"]
+  #get demo traits / weaknesses (if guest user)
   else
-  #get demo traits / weaknesses
     #token and headers for HTTP requests
     token = "fdab6a6892b198e40c2484bf2121f761"
     headers = {"Authorization" => "Bearer #{token}"}
@@ -130,25 +158,10 @@ post '/results' do
   end
 
   erb :results, locals: {response: response, options: Option.all(), heroes: Hero.all(), user: user, weaknesses: weaknesses}
-
-end
-
-get '/receive_code/' do
-  if session["state"] = params[:state]
-    response = HTTParty.post('https://api.23andme.com/token/', body: {
-      client_id: client_id,
-      client_secret: client_secret,
-      grant_type: "authorization_code",
-      code: params[:code],
-      redirect_uri: redirect_uri,
-      scope: "basic names analyses phenotypes:read:sex"
-    })
-    session["access_token"] = response["access_token"]
-  end
-  redirect ('/assessment')
 end
 
 get '/logout' do
+  #rest session["access_token"] to nil
   session["access_token"] = nil
   redirect('/')
 end

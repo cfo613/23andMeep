@@ -8,6 +8,5 @@ window.addEventListener('load', function() {
 })
 
 window.addEventListener('load', function() {
-  var token = session["access_token"];
-  console.log(token);
+  var session = session;
 })
