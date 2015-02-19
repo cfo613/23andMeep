@@ -62,6 +62,7 @@ get '/receive_code/' do
       scope: "basic names analyses phenotypes:read:sex"
     })
     session["access_token"] = response["access_token"]
+    session["user_id"] = nil
   end
   redirect ('/assessment')
 end
@@ -154,10 +155,10 @@ post '/results' do
     profile_id = profile["profiles"][0]["id"]
     #get trait information
     traits = HTTParty.get('https://api.23andme.com/1/demo/traits/' + profile_id, headers: headers)
-    weaknesses = traits["traits"]
+    @weaknesses = traits["traits"]
   end
 
-  erb :results, locals: {response: response, options: Option.all(), heroes: Hero.all(), user: user, weaknesses: weaknesses}
+  erb :results, locals: {response: response, options: Option.all(), heroes: Hero.all(), user: user, weaknesses: @weaknesses}
 end
 
 get '/logout' do

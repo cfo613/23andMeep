@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/style.css">
   <title>23andMeep Results</title>
-  <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
   <script src = "results.js"></script>
 </head>
 <body>
@@ -36,19 +35,77 @@
     <% weakness_arr.push(weaknesses[13]["trait"]) %>
     <% end %>
 
+  <!-- super hero profile -->
+    <% if response["answer1"] == options[0]["optiona"] || response["answer1"] == options[0]["optionc"] %>
+      <% if response["answer2"] == options[1]["optiona"].split.first(1)[0] || response["answer2"] == options[1]["optionb"].split.first(1)[0] %>
+        <% if user["gender"] == "female" %>
+          <% hero_name = heroes[0]["name"] %>
+          <% hero_desc = heroes[0]["description"] %>
+          <% hero_costume = heroes[0]["costume"] %>
+          <% hero_energy = heroes[0]["energy_source"]%>
+        <% else %>
+          <% hero_name = heroes[1]["name"] %>
+          <% hero_desc = heroes[1]["description"] %>
+          <% hero_costume = heroes[1]["costume"] %>
+          <% hero_energy = heroes[1]["energy_source"]%>
+        <% end %>
+      <% else %>
+        <% if user["gender"] == "female" %>
+          <% hero_name = heroes[2]["name"] %>
+          <% hero_desc = heroes[2]["description"] %>
+          <% hero_costume = heroes[2]["costume"] %>
+          <% hero_energy = heroes[2]["energy_source"]%>
+        <% else %>
+          <% hero_name = heroes[3]["name"] %>
+          <% hero_desc = heroes[3]["description"] %>
+          <% hero_costume = heroes[3]["costume"] %>
+          <% hero_energy = heroes[3]["energy_source"]%>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <% if response["answer1"] == options[0]["optionb"] || response["answer1"] == options[0]["optiond"] %>
+      <% if response["answer2"] == options[1]["optiona"].split.first(1)[0] || response["answer2"] == options[1]["optionb"].split.first(1)[0] %>
+        <% if user["gender"] == "female" %>
+          <% hero_name = heroes[4]["name"] %>
+          <% hero_desc = heroes[4]["description"] %>
+          <% hero_costume = heroes[4]["costume"] %>
+          <% hero_energy = heroes[4]["energy_source"]%>
+        <% else %>
+          <% hero_name = heroes[5]["name"] %>
+          <% hero_desc = heroes[5]["description"] %>
+          <% hero_costume = heroes[5]["costume"] %>
+          <% hero_energy = heroes[5]["energy_source"]%>
+        <% end %>
+      <% else %>
+        <% if user["gender"] == "female" %>
+          <% hero_name = heroes[6]["name"] %>
+          <% hero_desc = heroes[6]["description"] %>
+          <% hero_costume = heroes[6]["costume"] %>
+          <% hero_energy = heroes[6]["energy_source"]%>
+        <% else %>
+          <% hero_name = heroes[7]["name"] %>
+          <% hero_desc = heroes[7]["description"] %>
+          <% hero_costume = heroes[7]["costume"] %>
+          <% hero_energy = heroes[7]["energy_source"]%>
+        <% end %>
+      <% end %>
+    <% end %>
+
+
   <!-- sidekick logic -->
-  <% if response["answer4"] == options[3]["optiona"] %>
-    <% img = "/images/grit.png" %>
-  <% end %>
-  <% if response["answer4"] == options[3]["optionb"] %>
-    <% img = "/images/quirkiness.png" %>
-  <% end %>
-  <% if response["answer4"] == options[3]["optionc"] %>
-    <% img = "/images/strength.png" %>
-  <% end %>
-  <% if response["answer4"] == options[3]["optiond"] %>
-    <% img = "/images/looks.png" %>
-  <% end %>
+    <% if response["answer4"] == options[3]["optiona"] %>
+      <% img = "/images/grit.png" %>
+    <% end %>
+    <% if response["answer4"] == options[3]["optionb"] %>
+      <% img = "/images/quirkiness.png" %>
+    <% end %>
+    <% if response["answer4"] == options[3]["optionc"] %>
+      <% img = "/images/strength.png" %>
+    <% end %>
+    <% if response["answer4"] == options[3]["optiond"] %>
+      <% img = "/images/looks.png" %>
+    <% end %>
 
 <div id = "calc">
   <div id = "show">
@@ -68,6 +125,7 @@
   <div id = "hide">
     <!-- header -->
   <div id = "resultsBanner">
+  <div class = "container-fluid">
     <div class = "row">
       <div class = "col-md-6 col-md-offset-3">
         <h1>Oh hey, super version of <%= user["first_name"] %>!</h1>
@@ -84,63 +142,8 @@
       <h4 class = "intro" id = "selection">...although we do believe in natural selection.</h4>
     </div>
   </div>
-    <!-- super hero profile -->
-    <% if response["answer1"] == options[0]["optiona"] || response["answer1"] == options[0]["optionc"] %>
-    <% if response["answer2"] == options[1]["optiona"] || response["answer2"] == options[1]["optionb"] %>
-    <% if user["gender"] == "female" %>
-    <% hero_name = heroes[0]["name"] %>
-    <% hero_desc = heroes[0]["description"] %>
-    <% hero_costume = heroes[0]["costume"] %>
-    <% hero_energy = heroes[0]["energy_source"]%>
-    <% else %>
-    <% hero_name = heroes[1]["name"] %>
-    <% hero_desc = heroes[1]["description"] %>
-    <% hero_costume = heroes[1]["costume"] %>
-    <% hero_energy = heroes[1]["energy_source"]%>
-    <% end %>
-    <% else %>
-    <% if user["gender"] == "female" %>
-    <% hero_name = heroes[2]["name"] %>
-    <% hero_desc = heroes[2]["description"] %>
-    <% hero_costume = heroes[2]["costume"] %>
-    <% hero_energy = heroes[2]["energy_source"]%>
-    <% else %>
-    <% hero_name = heroes[3]["name"] %>
-    <% hero_desc = heroes[3]["description"] %>
-    <% hero_costume = heroes[3]["costume"] %>
-    <% hero_energy = heroes[3]["energy_source"]%>
-    <% end %>
-    <% end %>
-    <% end %>
-
-    <% if response["answer1"] == options[0]["optionb"] || response["answer1"] == options[0]["optiond"] %>
-    <% if response["answer2"] == options[1]["optiona"] || response["answer2"] == options[1]["optionb"] %>
-    <% if user["gender"] == "female" %>
-    <% hero_name = heroes[4]["name"] %>
-    <% hero_desc = heroes[4]["description"] %>
-    <% hero_costume = heroes[4]["costume"] %>
-    <% hero_energy = heroes[4]["energy_source"]%>
-    <% else %>
-    <% hero_name = heroes[5]["name"] %>
-    <% hero_desc = heroes[5]["description"] %>
-    <% hero_costume = heroes[5]["costume"] %>
-    <% hero_energy = heroes[5]["energy_source"]%>
-    <% end %>
-    <% else %>
-    <% if user["gender"] == "female" %>
-    <% hero_name = heroes[6]["name"] %>
-    <% hero_desc = heroes[6]["description"] %>
-    <% hero_costume = heroes[6]["costume"] %>
-    <% hero_energy = heroes[6]["energy_source"]%>
-    <% else %>
-    <<% hero_name = heroes[7]["name"] %>
-    <% hero_desc = heroes[7]["description"] %>
-    <% hero_costume = heroes[7]["costume"] %>
-    <% hero_energy = heroes[7]["energy_source"]%>
-    <% end %>
-    <% end %>
-    <% end %>
-
+  </div>
+  <!-- super hero details -->
     <div class = "row">
       <div class = "col-md-3 col-md-offset-2 text-center">
         <h2 id = "heroName"><%=hero_name%></h2>
@@ -160,18 +163,15 @@
         <h4 class = "heroHeaders">WEAKNESSES</h4>
       </div>
     </div>
-
     <div class = "row">
-      <div class = "col-md-3 col-md-offset-2 text-center">
+      <div class = "col-md-3 col-md-offset-6 col-md-offset-12 col-md-offset-2 text-center">
         <h4 id = "sidekickName">Trusty Sidekick</h3>
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col-md-3 col-md-offset-2 text-center">
-        <img src = <%=img%> id = "sidekickImg"/>
       </div>
       <div class = "col-md-5 text-left">
         <h4 class = "heroHeaders">COSTUME</h4>
+      </div>
+      <div class = "col-md-3 col-md-offset-2 text-center">
+        <img src = <%=img%> id = "sidekickImg"/>
       </div>
       <div class = "col-md-5" id = "heroDetails">
         <p id = "heroCostume"><%=hero_costume%></p>
@@ -183,7 +183,6 @@
         <p id = "heroEnergy"><%=hero_energy%></p>
       </div>
     </div>
-
   </div>
 </div>
 </body>

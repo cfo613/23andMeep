@@ -6,7 +6,3 @@ window.addEventListener('load', function() {
     results.id = 'show';
   }, 6000);
 })
-
-window.addEventListener('load', function() {
-  var session = session;
-})
