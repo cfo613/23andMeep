@@ -46,6 +46,11 @@ INDEX STYLING
   margin-right: auto;
 }
 
+#welcomeIntro {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 /*--------------------
 LOGIN STYLING
 --------------------*/
@@ -62,7 +67,7 @@ LOGIN STYLING
   padding-bottom: 50px;
   background-color: white;
   margin-top: 50px;
-  height: 450px;
+  height: 500px;
   border-radius: 25px;
 }
 
