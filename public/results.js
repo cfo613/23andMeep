@@ -8,8 +8,7 @@ window.addEventListener('load', function() {
 });
 
 // setTimeout(function() { weaknessPopover()}, 7000);
-//
-// var weaknessPopover = function() {
+//   var weaknessPopover = function() {
 //   var weaknesses = [];
 //   weaknesses = document.querySelectorAll(".weakness");
 //   console.log(weaknesses);
@@ -18,12 +17,8 @@ window.addEventListener('load', function() {
 //     console.log(weaknesses[i].id);
 //     if (weaknesses[i].id === "Bitter") {
 //       console.log("made it here");
-//       $(weaknesses[i]).popover({
-//         "data-container": "body",
-//         "data-content": "As a superhero, bitter taste perception is critical, as all heroes harness the bitter taste of evil in order to achieve their potential.",
-//         "data-placement": "top",
-//         "data-trigger": "click"
-//       });
+//       (weaknesses[i]).popover("data-container"="body","data-toggle"="popover", "data-content"="As a superhero, bitter taste perception is critical, as all heroes harness the bitter taste of evil in order to achieve their potential.", "data-placement"="top","data-trigger"="click");
+//       })
 //     }
 //   }
 // }

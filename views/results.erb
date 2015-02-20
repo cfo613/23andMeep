@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/style.css">
   <title>23andMeep Results</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src = "results.js"></script>
 </head>
 <body>
@@ -40,7 +41,11 @@
     <!-- if 23andme profile -->
     <% else %>
       <% weakness_arr.push(weakness_options[rand(0..1)]) %>
-      <% weakness_arr.push(weakness_options[rand(2..3)]) %>
+      <% if user["gener"] == "male" %>
+        <% weakness_arr.push(weakness_options[rand(2..3)]) %>
+      <% else %>
+        <% weakness_arr.push(weakness_options[2]) %>
+      <% end %>
       <% weakness_arr.push(weakness_options[rand(4..5)]) %>
     <% end %>
 

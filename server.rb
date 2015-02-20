@@ -27,7 +27,7 @@ client_secret = json_hash['secret']
 redirect_uri = 'http://104.236.70.15/receive_code/'
 
 get '/' do
-  render :erb, :index
+  render(erb :index)
 end
 
 
