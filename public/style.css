@@ -299,6 +299,7 @@ RESULTS STYLING
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
+  border-radius: 15px;
 }
 
 #bottom {
@@ -346,7 +347,7 @@ RESULTS STYLING
 }
 
 #heroImg {
-  width: 215px;
+  width: 325px;
   border: 5px solid black;
   border-radius: 5px;
 }
@@ -371,4 +372,17 @@ RESULTS STYLING
   background-color: rgba(255,255,255,.5);
   border: 5px solid black;
   border-radius: 5px;
+}
+
+.weakness {
+  width: 100px;
+}
+
+#space {
+  visibility: hidden;
+}
+
+#weaknessDesc {
+  font-size: 12px;
+  font-weight: bold;
 }

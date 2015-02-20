@@ -1,3 +1,5 @@
 .DS_Store
 Gemfile.lock
 secret.json
+*package.json
+*node_modules

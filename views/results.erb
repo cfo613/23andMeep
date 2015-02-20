@@ -9,30 +9,39 @@
 </head>
 <body>
   <!-- weakness logic -->
-    <% weakness_arr = [] %>
-    <!-- alcohol flush -->
-    <% if weaknesses[0]["trait"] == "Flushes" %>
-    <% weakness_arr.push('/images/alcohol.png') %>
-    <% end %>
-    <!-- bitter taste perception -->
-    <% if weaknesses[1]["trait"] == "Can Taste" %>
-    <% weakness_arr.push('/images/bitter.png') %>
-    <% end %>
-    <!-- lactose intolerance -->
-    <% if weaknesses[6]["trait"] == "Likely Intolerant" %>
-    <% weakness_arr.push('/images/lactose.png') %>
-    <% end %>
-    <!-- male pattern baldness -->
-    <% if weaknesses[8]["trait"] == "Increased Odds" || weaknesses[8]["trait"] == "Typical Odds" %>
-    <% weakness_arr.push('/images/baldness.png') %>
-    <% end %>
-    <!-- red hair -->
-    <% if weaknesses[11]["trait"] == "High Chance" || weaknesses[11]["trait"] == ">70% Chance" %>
-    <% weakness_arr.push('/images/ginger.png') %>
-    <% end %>
-    <!-- smoking behavior -->
-    <% if weaknesses[13]["trait"] == "If a Smoker, Likely to Smoke More" %>
-    <% weakness_arr.push('/images/smoking.png') %>
+  <% weakness_options = [{desc: weaknesses[0]["description"], img: '/images/alcohol.png'}, {desc: weaknesses[1]["description"], img: '/images/bitter.png'}, {desc: weaknesses[6]["description"], img: '/images/lactose.png'}, {desc: weaknesses[8]["description"], img: '/images/baldness.png'}, {desc: weaknesses[11]["description"], img: '/images/ginger.png'}, {desc: weaknesses[13]["description"], img: '/images/smoking.png'}] %>
+  <% weakness_arr = [] %>
+    <!-- if 23andme profile -->
+    <% if session["access_token"] %>
+      <!-- alcohol flush -->
+      <% if weaknesses[0]["trait"] == "Flushes" %>
+      <% weakness_arr.push(weakness_options[0]) %>
+      <% end %>
+      <!-- bitter taste perception -->
+      <% if weaknesses[1]["trait"] == "Can Taste" %>
+      <% weakness_arr.push(weakness_options[1]) %>
+      <% end %>
+      <!-- lactose intolerance -->
+      <% if weaknesses[6]["trait"] == "Likely Intolerant" %>
+      <% weakness_arr.push(weakness_options[2]) %>
+      <% end %>
+      <!-- male pattern baldness -->
+      <% if weaknesses[8]["trait"] == "Increased Odds" || weaknesses[8]["trait"] == "Typical Odds" %>
+      <% weakness_arr.push(weakness_options[3]) %>
+      <% end %>
+      <!-- red hair -->
+      <% if weaknesses[11]["trait"] == "High Chance" || weaknesses[11]["trait"] == ">70% Chance" %>
+      <% weakness_arr.push(weakness_options[4]) %>
+      <% end %>
+      <!-- smoking behavior -->
+      <% if weaknesses[13]["trait"] == "If a Smoker, Likely to Smoke More" %>
+      <% weakness_arr.push(weakness_options[5]) %>
+      <% end %>
+    <!-- if 23andme profile -->
+    <% else %>
+      <% weakness_arr.push(weakness_options[rand(0..1)]) %>
+      <% weakness_arr.push(weakness_options[rand(2..3)]) %>
+      <% weakness_arr.push(weakness_options[rand(4..5)]) %>
     <% end %>
 
   <!-- super hero profile -->
@@ -162,12 +171,17 @@
       <div class = "col-md-5 text-left">
         <h4 class = "heroHeaders">WEAKNESSES</h4>
       </div>
+      <div class = "col-md-2" id = "space">
+        <p>need some space and tired of bootstrap...</p>
+      </div>
       <% weakness_arr.each do |weakness| %>
-        <div class = "col-md-2 col-md-offset-6">
-          <img class = "weakness" src = <%= weakness %> />
+        <div class = "col-md-1 text-center">
+          <img class = "weakness" id = <%= weakness[:desc] %> src = <%= weakness[:img] %> />
+          <p id = "weaknessDesc"><%= weakness[:desc] %></p>
         </div>
       <% end %>
     </div>
+    <br>
     <div class = "row">
       <div class = "col-md-3 col-md-offset-6 col-md-offset-12 col-md-offset-2 text-center">
         <h4 id = "sidekickName">Trusty Sidekick</h3>
