@@ -52,11 +52,13 @@
           <% hero_desc = heroes[0]["description"] %>
           <% hero_costume = heroes[0]["costume"] %>
           <% hero_energy = heroes[0]["energy_source"]%>
+          <% hero_img = '/images/hipster.png' %>
         <% else %>
           <% hero_name = heroes[1]["name"] %>
           <% hero_desc = heroes[1]["description"] %>
           <% hero_costume = heroes[1]["costume"] %>
           <% hero_energy = heroes[1]["energy_source"]%>
+          <% hero_img = '/images/hipster.png' %>
         <% end %>
       <% else %>
         <% if user["gender"] == "female" %>
@@ -64,11 +66,13 @@
           <% hero_desc = heroes[2]["description"] %>
           <% hero_costume = heroes[2]["costume"] %>
           <% hero_energy = heroes[2]["energy_source"]%>
+          <% hero_img = '/images/shutdown.png' %>
         <% else %>
           <% hero_name = heroes[3]["name"] %>
           <% hero_desc = heroes[3]["description"] %>
           <% hero_costume = heroes[3]["costume"] %>
           <% hero_energy = heroes[3]["energy_source"]%>
+          <% hero_img = '/images/shutdown.png' %>
         <% end %>
       <% end %>
     <% end %>
@@ -80,11 +84,13 @@
           <% hero_desc = heroes[4]["description"] %>
           <% hero_costume = heroes[4]["costume"] %>
           <% hero_energy = heroes[4]["energy_source"]%>
+          <% hero_img = '/images/charitable.png' %>
         <% else %>
           <% hero_name = heroes[5]["name"] %>
           <% hero_desc = heroes[5]["description"] %>
           <% hero_costume = heroes[5]["costume"] %>
           <% hero_energy = heroes[5]["energy_source"]%>
+          <% hero_img = '/images/charitable.png' %>
         <% end %>
       <% else %>
         <% if user["gender"] == "female" %>
@@ -92,11 +98,13 @@
           <% hero_desc = heroes[6]["description"] %>
           <% hero_costume = heroes[6]["costume"] %>
           <% hero_energy = heroes[6]["energy_source"]%>
+          <% hero_img = '/images/pioneer.png' %>
         <% else %>
           <% hero_name = heroes[7]["name"] %>
           <% hero_desc = heroes[7]["description"] %>
           <% hero_costume = heroes[7]["costume"] %>
           <% hero_energy = heroes[7]["energy_source"]%>
+          <% hero_img = '/images/pioneer.png' %>
         <% end %>
       <% end %>
     <% end %>
@@ -163,11 +171,12 @@
     </div>
     <div class = "row">
       <div class = "col-md-3 col-md-offset-2 text-center">
-        <img src = "/images/hipster.png" id = "heroImg">
+        <img src = <%= hero_img %> id = "heroImg" />
       </div>
       <div class = "col-md-5 text-left" id = "heroDetails">
         <p id = "heroDesc"><%=hero_desc%></p>
       </div>
+      <br><br>
       <div class = "col-md-5 text-left">
         <h4 class = "heroHeaders">WEAKNESSES</h4>
       </div>
@@ -181,7 +190,6 @@
         </div>
       <% end %>
     </div>
-    <br>
     <div class = "row">
       <div class = "col-md-3 col-md-offset-6 col-md-offset-12 col-md-offset-2 text-center">
         <h4 id = "sidekickName">Trusty Sidekick</h3>
@@ -193,7 +201,7 @@
         <img src = <%=img%> id = "sidekickImg"/>
       </div>
       <div class = "col-md-5" id = "heroDetails">
-        <p id = "heroCostume"><%=hero_costume%></p>
+        <p id = "heroCostume"><%=hero_costume%> Oh and it's in <%= response["answer3"]%>, of course.</p>
       </div>
       <div class = "col-md-5 text-left">
         <h4 class = "heroHeaders">ENERGY SOURCE</h4>
