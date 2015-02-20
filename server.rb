@@ -124,7 +124,6 @@ get '/assessment' do
     #find previously created user by session["user_id"]
     user = User.find_by(id: session["user_id"])
   end
-  binding.pry
 
   erb :assessment, locals: {user: user, questions: Question.all(), options: Option.all()}
 
@@ -167,7 +166,6 @@ post '/results' do
     traits = HTTParty.get('https://api.23andme.com/1/demo/traits/' + profile_id, headers: headers)
     weaknesses = traits["traits"]
   end
-  binding.pry
 
   erb :results, locals: {response: response, options: Option.all(), heroes: Hero.all(), user: user, weaknesses: weaknesses}
 end
