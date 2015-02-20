@@ -24,7 +24,7 @@ end
 json_hash = JSON.parse(json)
 client_id = json_hash['id']
 client_secret = json_hash['secret']
-redirect_uri = 'http://104.236.70.15/receive_code/'
+redirect_uri = 'http://localhost:4567/receive_code/'
 
 get '/' do
   render :erb, :index
@@ -124,6 +124,7 @@ get '/assessment' do
     #find previously created user by session["user_id"]
     user = User.find_by(id: session["user_id"])
   end
+  binding.pry
 
   erb :assessment, locals: {user: user, questions: Question.all(), options: Option.all()}
 
@@ -164,10 +165,11 @@ post '/results' do
     profile_id = profile["profiles"][0]["id"]
     #get trait information
     traits = HTTParty.get('https://api.23andme.com/1/demo/traits/' + profile_id, headers: headers)
-    @weaknesses = traits["traits"]
+    weaknesses = traits["traits"]
   end
+  binding.pry
 
-  erb :results, locals: {response: response, options: Option.all(), heroes: Hero.all(), user: user, weaknesses: @weaknesses}
+  erb :results, locals: {response: response, options: Option.all(), heroes: Hero.all(), user: user, weaknesses: weaknesses}
 end
 
 get '/logout' do
