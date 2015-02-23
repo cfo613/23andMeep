@@ -366,7 +366,7 @@ RESULTS STYLING
 }
 
 #sidekickImg {
-  width: 150px;
+  width: 175px;
   border: 5px solid black;
   border-radius: 5px;
   margin-bottom: 30px;
@@ -388,15 +388,49 @@ RESULTS STYLING
 }
 
 .weakness {
-  width: 125px;
+  width: 100px;
+  /*box-shadow: 2px 2px 5px #888888;*/
+  padding-left: 20px;
+}
+
+.popover {
+  width: 250px;
+}
+
+.popover-title {
+  background-color: black;
+  color: white;
+  font-size: 14px;
+}
+
+.popover-content {
+  background-color: rgba(255,255,255,.5);
 }
 
 #space {
   visibility: hidden;
 }
 
-#weaknessDesc {
+#weaknessSection {
+  padding-top: 10px;
+  background-color: rgba(255,255,255,.5);
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+/*#weaknessDesc {
   font-size: 12px;
   font-weight: bold;
-  padding-left: 20px;
+  padding-left: 50px;
+}*/
+
+#weaknessNote {
+  padding-left: 15px;
+}
+
+#demoNote {
+  font-style: italic;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-left: 50px;
 }

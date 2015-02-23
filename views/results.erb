@@ -1,12 +1,13 @@
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src = "/results.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/style.css">
   <title>23andMeep Results</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src = "results.js"></script>
 </head>
 <body>
   <!-- weakness logic -->
@@ -38,7 +39,7 @@
       <% if weaknesses[13]["trait"] == "If a Smoker, Likely to Smoke More" %>
       <% weakness_arr.push(weakness_options[5]) %>
       <% end %>
-    <!-- if 23andme profile -->
+    <!-- if guest user profile -->
     <% else %>
       <% weakness_arr.push(weakness_options[rand(0..1)]) %>
       <% if user["gener"] == "male" %>
@@ -183,17 +184,31 @@
       </div>
       <br><br>
       <div class = "col-md-5 text-left">
-        <h4 class = "heroHeaders">WEAKNESSES</h4>
+        <h4 class = "heroHeaders">WEAKNESSES*</h4>
       </div>
-      <div class = "col-md-2" id = "space">
-        <p>need some space and tired of bootstrap...</p>
-      </div>
-      <% weakness_arr.each do |weakness| %>
-        <div class = "col-md-1 text-center">
-          <img class = "weakness" id = <%= weakness[:desc] %> src = <%= weakness[:img] %> />
-          <p id = "weaknessDesc"><%= weakness[:desc] %></p>
-        </div>
-      <% end %>
+        <!-- <div class = "row"> -->
+          <div class = "col-md-5" id = "weaknessSection">
+            <div class = "row text-left">
+              <p id = "weaknessNote">Your weaknesses have been pulled from genetic traits listed on your 23andMe profile. Click on the icons for more details.</p>
+            </div>
+            <!-- <div class = "row" id = "space">
+              <p>need some space and tired of bootstrap...</p>
+            </div> -->
+            <div class = "row">
+            <% weakness_arr.each do |weakness| %>
+              <div class = "col-md-2">
+                <img class = "weakness" id = <%= weakness[:desc]%> data-toggle="popover" data-placement="top" data-viewport="body" title = <%= weakness[:desc]%> data-trigger="click" src = <%= weakness[:img] %> />
+                <!-- <p id = "weaknessDesc"><%= weakness[:desc] %></p> -->
+              </div>
+            <% end %>
+            </div>
+            <div class = "row">
+              <div class = "text-left">
+                <p id = "demoNote">*Note: guest users genetic traits are selected randomly and do not reflect actual genetic traits.</p>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
     </div>
     <div class = "row">
       <div class = "col-md-3 col-md-offset-6 col-md-offset-12 col-md-offset-2 text-center">
