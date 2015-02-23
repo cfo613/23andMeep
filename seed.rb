@@ -54,7 +54,7 @@ Option.create({
 Hero.create({
   name: "Hipster Hero",
   gender: "female",
-  description: "Not your typical Brooklyn hipster. While she upholds all hipster values (progressive political views, thrift store/vintage clothing, artisanal cheeses, etc.), she also has a secret - the power of telepathy! This Hipster Hero mostly uses her powers for good - anticipating anti-feminist behavior, racially-motivated police brutality, and people who aren't planning to recycle their water bottle - she occasionally uses the power to read people's thoughts and determine whether or not to secretly hate/admire them. What? She's a hero - not a saint!",
+  description: "Not your typical Brooklyn hipster. While she upholds all hipster values (progressive political views, thrift store / vintage clothing, artisanal cheeses, etc.), she also has a secret - the power of telepathy! This Hipster Hero mostly uses her powers for good - anticipating anti-feminist behavior, racially-motivated police brutality, and people who aren't planning to recycle their water bottle - she occasionally uses the power to read people's thoughts and determine whether or not to secretly hate or admire them. What? She's a hero - not a saint!",
   costume: "Eco-friendly recycled cotton with alpaca fringe (vintage, of course).",
   energy_source: "Organic juices and locally grown produce"
 });
@@ -62,7 +62,7 @@ Hero.create({
 Hero.create({
   name: "Hipster Hero",
   gender: "male",
-  description: "Not your typical Brooklyn hipster. While he upholds all hipster values (progressive political views, thrift store/vintage clothing, artisanal cheeses, etc.), he also has a secret - the power of telepathy! This Hipster Hero mostly uses his powers for good - anticipating anti-feminist behavior, racially-motivated police brutality, and people who aren't planning to recycle their water bottle - he occasionally uses the power to read people's thoughts and determine whether or not to secretly hate/admire them. What? He's a hero - not a saint!",
+  description: "Not your typical Brooklyn hipster. While he upholds all hipster values (progressive political views, thrift store / vintage clothing, artisanal cheeses, etc.), he also has a secret - the power of telepathy! This Hipster Hero mostly uses his powers for good - anticipating anti-feminist behavior, racially-motivated police brutality, and people who aren't planning to recycle their water bottle - he occasionally uses the power to read people's thoughts and determine whether or not to secretly hate or admire them. What? He's a hero - not a saint!",
   costume: "Eco-friendly recycled cotton with alpaca fringe (vintage, of course).",
   energy_source: "Organic juices and locally grown produce"
 });
@@ -70,7 +70,7 @@ Hero.create({
 Hero.create({
   name: "Shutdown Savior",
   gender: "female",
-  description: "This smart-a** is not only quick-witted, but also possesses the power of lightning speed. Both come in handy when you need to disarm the a-hole spewing nonsense on the subway/bus/some other crowded place. She has been known to render jerks speechless with only one line. While sometimes found in the stand-up joints using her power to make a quick buck, she mostly uses her powers to keep the citizens of NYC sane.",
+  description: "This smart-a** is not only quick-witted, but also possesses the power of lightning speed. Both come in handy when you need to disarm the a-hole spewing nonsense on the subway / bus / some other crowded place. She has been known to render jerks speechless with only one line. While sometimes found in the stand-up joints using her power to make a quick buck, she mostly uses her powers to keep the citizens of NYC sane.",
   costume: "Jeans and t-shirt - what were you expecting her to dress up?",
   energy_source: "Black coffee...but sometimes something stronger..."
 });
@@ -78,7 +78,7 @@ Hero.create({
 Hero.create({
   name: "Shutdown Savior",
   gender: "male",
-  description: "This smart-a** is not only quick-witted, but also possesses the power of lightning speed. Both come in handy when you need to disarm the a-hole spewing nonsense on the subway/bus/some other crowded place. He has been known to render jerks speechless with only one line. While sometimes found in the stand-up joints using his power to make a quick buck, he mostly uses his powers to keep the citizens of NYC sane.",
+  description: "This smart-a** is not only quick-witted, but also possesses the power of lightning speed. Both come in handy when you need to disarm the a-hole spewing nonsense on the subway / bus / some other crowded place. He has been known to render jerks speechless with only one line. While sometimes found in the stand-up joints using his power to make a quick buck, he mostly uses his powers to keep the citizens of NYC sane.",
   costume: "Jeans and t-shirt - what were you expecting him to dress up?",
   energy_source: "Black coffee...but sometimes something stronger..."
 });
