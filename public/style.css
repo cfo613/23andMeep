@@ -202,10 +202,9 @@ GUEST STYLING
 ASSESSMENT STYLING
 --------------------*/
 #assessment {
-  background-color: rgba(126, 127, 137, 0.46);
-  /*background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQLDQI2JtCKMe4_lkrU-MStTMecT4K5s-brIAxrvN7exTwSiubW");*/
-  /*background-size: 100% 100%;
-  background-repeat: no-repeat;*/
+  background-image: url("/images/assessment_background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   font-weight: bold;
 }
 
@@ -228,9 +227,23 @@ ASSESSMENT STYLING
   height: 150px;
 }
 
+#assessmentQuestions {
+  background-color: rgba(141, 203, 251, 0.75);
+  border-radius: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-right: 50px;
+}
+
 .questions {
   font-weight: bold;
   color: black;
+  padding-left: 30px;
+}
+
+#q1row1a, #q1row1b, #q1row2a, #q1row2b, #q2row1a, #q2row1b, #q2row2a, #q2row2b, #q3row1, #q4row1 {
+  padding-left: 30px;
+  font-size: 16px;
 }
 
 .q1_img {
