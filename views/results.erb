@@ -197,14 +197,14 @@
             <div class = "row">
             <% weakness_arr.each do |weakness| %>
               <div class = "col-md-2">
-                <img class = "weakness" id = <%= weakness[:desc]%> data-toggle="popover" data-placement="top" data-viewport="body" title = <%= weakness[:desc]%> data-trigger="click" src = <%= weakness[:img] %> />
+                <img class = "weakness" id = <%= weakness[:desc]%> data-toggle="popover" data-placement="top" data-viewport="body" data-trigger="click" src = <%= weakness[:img] %> />
                 <!-- <p id = "weaknessDesc"><%= weakness[:desc] %></p> -->
               </div>
             <% end %>
             </div>
             <div class = "row">
               <div class = "text-left">
-                <p id = "demoNote">*Note: guest users genetic traits are selected randomly and do not reflect actual genetic traits.</p>
+                <p id = "demoNote">*Note: guest user genetic traits are selected randomly and do not reflect actual genetic traits.</p>
               </div>
             </div>
           </div>
