@@ -4,15 +4,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <title>23andMeep Sign-In</title>
 </head>
 <body id = "login">
   <br><br>
   <div class = "row">
-    <div class = "col-md-3 col-md-offset-2" id = "TTAMSignIn">
+    <div class = "col-md-4 col-md-offset-1" id = "TTAMSignIn">
       <h1 class = "headline">Genetic Specimen</h1>
       <img src = "images/23andme_logo.jpg" id = "TTAMlogo">
-      <br>
+      <br><br>
       <h4 class = "description">If you have a 23andMe account, you can sign in using your 23andMe username and password. This will allow us to import traits from your genetic profile.</h4>
       <br>
       <form action = '/login/TTAM' method = "GET">
@@ -20,14 +22,11 @@
       </form>
     </div>
 
-    <div class="col-md-3 col-md-offset-2" id = "guestSignIn">
+    <div class="col-md-4 col-md-offset-2" id = "guestSignIn">
       <h1 class = "headline">Mystery Guest</h1>
-      <span>
-      <img src = '/images/mystery-woman.png' class = "guestImage" id = "femaleGuest">
-      <img src = '/images/mystery-man.png' class = "guestImage" id = "maleGuest">
-      </span>
+      <img src = '/images/mystery-guest.png' id = "guestImage">
       <br><br>
-      <h4 class = "description">If you do not have a 23andMe account - fear not! You can create a new user account, and we will use a demo genetic profile.</h4>
+      <h4 class = "description">If you do not have a 23andMe account - fear not! You can create a new user account, and we will use a demo genetic profile with randomly selected traits.</h4>
       <br>
       <form action = '/login/guest' method = "GET">
         <button id = "guestUser">Sign In as a Guest</button>
