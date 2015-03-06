@@ -29,7 +29,7 @@ INDEX STYLING
 --------------------*/
 
 #homepage {
-  background-image: url("http://kidspartyhubph.com/wp-content/uploads/2012/11/Untitled-21.jpg");
+  background-image: url("./images/homepage_background.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -203,27 +203,27 @@ ASSESSMENT STYLING
   font-weight: bold;
 }
 
-#leftBanner {
-  background-image: url("/images/bam.png");
-  height: 150px;
-  background-size: 100% 100%;
-}
-
 #middleBanner {
-  background-color: blue;
+  background-color: rgba(51, 51, 244, 0.8);
   color: white;
-  height: 150px;
+  min-height: 150px;
   border-radius: 5px;
+  padding-bottom: 10px;
 }
 
-#rightBanner {
-  background-image: url("/images/pop.png");
-  background-size: 100% 100%;
-  height: 150px;
+#assessH1 {
+  margin-top: 0px;
+  padding-top: 30px;
+}
+
+#assessH4 {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 #assessmentQuestions {
-  background-color: rgba(141, 203, 251, 0.75);
+  background-color: rgba(201, 196, 196, 0.8);
   border-radius: 25px;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -239,11 +239,12 @@ ASSESSMENT STYLING
 #q1row1a, #q1row1b, #q1row2a, #q1row2b, #q2row1a, #q2row1b, #q2row2a, #q2row2b, #q3row1, #q4row1 {
   padding-left: 30px;
   font-size: 16px;
+  color: darkblue;
 }
 
 .q1_img {
-  width: 350px;
-  height: 250px;
+  max-width: 350px;
+  max-height: 250px;
   margin-top: 10px;
   border-radius: 10px;
 }
@@ -367,10 +368,6 @@ RESULTS STYLING
   margin-bottom: 30px;
 }
 
-#bio {
-  padding-top: 20px;
-}
-
 #selection {
   font-style: italic;
 }
@@ -428,4 +425,18 @@ RESULTS STYLING
   font-size: 12px;
   padding-top: 10px;
   padding-left: 50px;
+}
+
+/*--------------------
+MOBILE STYLING
+--------------------*/
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .heroHeaders {
+    text-align: center;
+  }
 }

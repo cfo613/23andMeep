@@ -22,10 +22,10 @@ Question.create({
 
 #create question options
 Option.create({
-  optiona: "http://i.dailymail.co.uk/i/pix/2012/05/19/article-0-132A2515000005DC-170_634x444.jpg",
-  optionb: "http://i.imgur.com/CWCVnP1.png",
-  optionc: "http://3.bp.blogspot.com/-Pqlp0SvORhE/U3HR-tlChrI/AAAAAAAAHHQ/V_veUN0WJnE/s1600/Teacup-Pigs-geart.jpg",
-  optiond: "http://img2-2.timeinc.net/people/i/2010/pets/migration/001965100.jpg",
+  optiona: "./images/ballerina_pig.png",
+  optionb: "./images/pigandlamb.png",
+  optionc: "./images/pigwithbeer.png",
+  optiond: "./images/piginboots.png",
   question_id: 1
 });
 Option.create({

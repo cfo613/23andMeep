@@ -9,15 +9,11 @@
   <title>23andMeep Assessment</title>
 </head>
 <body id = "assessment">
-  <div class = "row">
-    <div class = "col-md-3" id = "leftBanner"></div>
-    <div class = "col-md-6" id = "middleBanner">
-      <h1>Welcome, <%= user["first_name"] %> <%= user["last_name"] %>!</h1>
-      <h4>In addition to your genetic make-up, we need to assess specific personality traits in order
+    <div id = "middleBanner">
+      <h1 id = "assessH1">Welcome, <%= user["first_name"] %> <%= user["last_name"] %>!</h1>
+      <h4 id = "assessH4">In addition to your genetic make-up, we need to assess specific personality traits in order
         to determine your perfect super persona! Please answer the questions below.</h4>
     </div>
-    <div class = "col-md-3" id = "rightBanner"></div>
-  </div>
   <div class = "row">
     <div id = "assessmentQuestions" class = "col-md-10 col-md-offset-1">
     <form action = "/results" method = "POST">
@@ -31,11 +27,11 @@
         <br>
         <div class = "row">
           <div class = "col-md-4 col-md-offset-2" id = "q1row1a">
-            <input  type = "radio" name = "q1" required value = <%= options[0]["optiona"] %> /> Teacup pig playing guitar
+            <input  type = "radio" name = "q1" required value = <%= options[0]["optiona"] %> /> Teacup pig prima ballerina
             <br>
             <img class = "q1_img" src =<%= options[0]["optiona"] %> />
           </div>
-          <div class = "col-md-4" id = "q1row1b">
+          <div class = "col-md-4 col-md-offset-1" id = "q1row1b">
             <input  type = "radio" name = "q1" value = <%= options[0]["optionb"] %> /> Teacup pig cuddling with a lamb
             <br>
             <img class = "q1_img" src =<%= options[0]["optionb"] %> />
@@ -44,11 +40,11 @@
         <br>
         <div class = "row">
           <div class = "col-md-4 col-md-offset-2" id = "q1row2a">
-            <input  type = "radio" name = "q1" value = <%= options[0]["optionc"] %> /> Teacup pig pushing a shopping cart with a beer in it
+            <input  type = "radio" name = "q1" value = <%= options[0]["optionc"] %> /> Teacup pig with shopping cart
             <br>
             <img class = "q1_img" src =<%= options[0]["optionc"] %> />
           </div>
-          <div class = "col-md-4" id = "q1row2b">
+          <div class = "col-md-4 col-md-offset-1" id = "q1row2b">
             <input  type = "radio" name = "q1" value = <%= options[0]["optiond"] %> /> Teacup pig wearing rain boots
             <br>
             <img class = "q1_img" src =<%= options[0]["optiond"] %> />
@@ -128,7 +124,7 @@
         </div>
         <br><br><br>
       <div class = "nav">
-      <button id = "assessSubmit">submit</button>
+        <button id = "assessSubmit">submit</button>
       </div>
     </form>
     </div>

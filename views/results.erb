@@ -173,13 +173,13 @@
       <div class = "col-md-3 col-md-offset-2 text-center">
         <h2 id = "heroName"><%=hero_name%></h2>
       </div>
-      <div class = "col-md-5 text-left">
-        <h4 class = "heroHeaders" id = "bio">BIO</h4>
-      </div>
     </div>
     <div class = "row">
       <div class = "col-md-3 col-md-offset-2 text-center">
         <img src = <%= hero_img %> id = "heroImg" />
+      </div>
+      <div class = "col-md-5 text-left">
+        <h4 class = "heroHeaders" id = "bio">BIO</h4>
       </div>
       <div class = "col-md-5 text-left" id = "heroDetails">
         <p id = "heroDesc"><%=hero_desc%></p>
@@ -188,19 +188,14 @@
       <div class = "col-md-5 text-left">
         <h4 class = "heroHeaders">WEAKNESSES*</h4>
       </div>
-        <!-- <div class = "row"> -->
           <div class = "col-md-5" id = "weaknessSection">
             <div class = "row text-left">
               <p id = "weaknessNote">Your weaknesses have been pulled from genetic traits listed on your 23andMe profile. Click on the icons for more details.</p>
             </div>
-            <!-- <div class = "row" id = "space">
-              <p>need some space and tired of bootstrap...</p>
-            </div> -->
             <div class = "row">
             <% weakness_arr.each do |weakness| %>
               <div class = "col-md-2">
                 <img class = "weakness" id = <%= weakness[:desc]%> data-toggle="popover" data-placement="top" data-viewport="body" data-trigger="click" src = <%= weakness[:img] %> />
-                <!-- <p id = "weaknessDesc"><%= weakness[:desc] %></p> -->
               </div>
             <% end %>
             </div>
@@ -210,17 +205,18 @@
               </div>
             </div>
           </div>
-        <!-- </div> -->
     </div>
     <div class = "row">
       <div class = "col-md-3 col-md-offset-6 col-md-offset-12 col-md-offset-2 text-center">
-        <h4 id = "sidekickName">Trusty Sidekick</h3>
+        <h4 id = "sidekickName">TRUSTY SIDEKICK</h4>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-md-3 col-md-offset-2 text-center">
+        <img src = <%=img%> id = "sidekickImg"/>
       </div>
       <div class = "col-md-5 text-left">
         <h4 class = "heroHeaders">COSTUME</h4>
-      </div>
-      <div class = "col-md-3 col-md-offset-2 text-center">
-        <img src = <%=img%> id = "sidekickImg"/>
       </div>
       <div class = "col-md-5" id = "heroDetails">
         <p id = "heroCostume"><%=hero_costume%> Oh and it's in <%= response["answer3"]%>, of course.</p>
