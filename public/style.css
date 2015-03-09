@@ -451,6 +451,9 @@ MOBILE STYLING
     padding-left: 15px;
     padding-right: 15px;
   }
+  #assessmentQuestions {
+    background-color: white;
+  }
   .q1_img {
     max-width: 300px;
   }
