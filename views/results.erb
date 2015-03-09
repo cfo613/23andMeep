@@ -188,13 +188,13 @@
       <div class = "col-md-5 text-left">
         <h4 class = "heroHeaders">WEAKNESSES*</h4>
       </div>
-          <div class = "col-md-5">
+          <div class = "col-md-5" id = "weaknessSection">
             <div class = "row text-left">
               <p id = "weaknessNote">Your weaknesses have been pulled from genetic traits listed on your 23andMe profile. Click on the icons for more details.</p>
             </div>
             <div class = "row">
             <% weakness_arr.each do |weakness| %>
-              <div class = "col-md-2" id = "weaknessSection">
+              <div class = "col-md-2" id = "weaknessDisplay">
                 <img class = "weakness" id = <%= weakness[:desc]%> data-toggle="popover" data-placement="top" data-viewport="body" data-trigger="click" src = <%= weakness[:img] %> />
               </div>
             <% end %>
