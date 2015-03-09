@@ -29,9 +29,12 @@ INDEX STYLING
 --------------------*/
 
 #homepage {
-  background-image: url("./images/homepage_background.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  height: 100%;
+  background: url("./images/homepage_background.png") no-repeat center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 #welcome {
@@ -56,9 +59,12 @@ LOGIN STYLING
 --------------------*/
 
 #login {
-  background-image: url("http://helloiamphat.files.wordpress.com/2014/02/wham-bam-pow.jpg?w=696");
-    /*background-size: 100% 100%;
-    background-repeat: no-repeat;*/
+  height: 100%;
+  background: url("http://helloiamphat.files.wordpress.com/2014/02/wham-bam-pow.jpg?w=696") no-repeat center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 #TTAMSignIn, #guestSignIn {
@@ -114,9 +120,12 @@ LOGIN STYLING
 GUEST STYLING
 --------------------*/
 #guestLogin {
-  background-image: url("https://littledeanbean.files.wordpress.com/2014/03/noahsuperhero4bdayinvitefinal2-11.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  height: 100%;
+  background: url("./images/guest_background.png") no-repeat center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .guest {
@@ -126,8 +135,8 @@ GUEST STYLING
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   text-align: center;
-  padding-bottom: 50px;
   font-size: 16px;
   border-radius: 25px;
 }
@@ -424,12 +433,12 @@ MOBILE STYLING
 @media only screen and (max-device-width: 480px) {
 
   /*HOMEPAGE*/
-  #homepage {
+  /*#homepage {
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
-  }
+  }*/
+
   /*GUEST LOGIN*/
   #guestLogin {
     background-color: blue;
