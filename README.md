@@ -11,9 +11,9 @@ I created a wireframe to help plan the path for the user and the structure of th
 
 In addition, I created an ERD (Entity Relationship Diagram) to ensure I was thinking through the structure of the data in the right way:
 
-![ERD](./images/23andMeep_ERDiagram.png)
+![ERD](./public/images/23andMeep_ERDiagram.png)
 
-I seeded the database with the 4 questions, the options for each question, and the 4 superhero personas. Future enhancements would include a more complex user survey and more superhero personas.
+I seeded the database with the questions, the options for each question, and the superhero personas. Future enhancements would include a more complex user survey and more superhero personas.
 
 
 ## Technologies Used
